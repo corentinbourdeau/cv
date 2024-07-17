@@ -6,10 +6,14 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.black,
       title: const Center(
         child: Column(
           children: [
-            Text('Corentin Bourdeau'),
+            Text(
+              'Corentin Bourdeau',
+              style: TextStyle(color: Colors.white),
+            ),
           ],
         ),
       ),
