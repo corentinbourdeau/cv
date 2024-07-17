@@ -107,39 +107,41 @@ class _GameOfLifeState extends State<GameOfLife> {
           ],
         ),
       ),
-      child: Column(
-        children: [
-          Text(
-            'Génération : $generation',
-            style: const TextStyle(color: Colors.white, fontSize: 25),
-          ),
-          GestureDetector(
-            onTapDown: (details) {
-              setState(() {
-                _toggleCell(details.localPosition);
-              });
-            },
-            child: Container(
-              color: Colors.black,
-              child: CustomPaint(
-                size: const Size.square(800),
-                painter: GridPainter(grid),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Text(
+              'Génération : $generation',
+              style: const TextStyle(color: Colors.white, fontSize: 25),
+            ),
+            GestureDetector(
+              onTapDown: (details) {
+                setState(() {
+                  _toggleCell(details.localPosition);
+                });
+              },
+              child: Container(
+                color: Colors.black,
+                child: CustomPaint(
+                  size: const Size.square(800),
+                  painter: GridPainter(grid),
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: isRunning ? _pauseGame : _startGame,
-                  child: Text(isRunning ? 'Pause' : 'Start'),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: isRunning ? _pauseGame : _startGame,
+                    child: Text(isRunning ? 'Pause' : 'Start'),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
