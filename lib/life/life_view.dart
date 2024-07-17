@@ -31,6 +31,7 @@ class GameOfLife extends StatefulWidget {
 class _GameOfLifeState extends State<GameOfLife> {
   static const int rows = 40;
   static const int cols = 40;
+  static int generation = 0;
   List<List<bool>> grid =
       List.generate(rows, (_) => List.generate(cols, (_) => false));
   Timer? timer;
@@ -42,6 +43,7 @@ class _GameOfLifeState extends State<GameOfLife> {
     });
     timer = Timer.periodic(const Duration(milliseconds: 300), (timer) {
       setState(() {
+        generation += 1;
         _updateGrid();
       });
     });
@@ -107,6 +109,10 @@ class _GameOfLifeState extends State<GameOfLife> {
       ),
       child: Column(
         children: [
+          Text(
+            'Génération : $generation',
+            style: const TextStyle(color: Colors.white, fontSize: 25),
+          ),
           GestureDetector(
             onTapDown: (details) {
               setState(() {
@@ -168,7 +174,7 @@ class GridPainter extends CustomPainter {
 
     for (int row = 0; row < grid.length; row++) {
       for (int col = 0; col < grid[row].length; col++) {
-        paint.color = grid[row][col] ? Colors.green : Colors.black;
+        paint.color = grid[row][col] ? Colors.white : Colors.black;
         canvas.drawRect(
           Rect.fromLTWH(col * cellSize, row * cellSize, cellSize, cellSize),
           paint,
@@ -176,7 +182,7 @@ class GridPainter extends CustomPainter {
       }
     }
 
-    paint.color = Colors.white;
+    paint.color = Colors.white.withAlpha(30);
     paint.style = PaintingStyle.stroke;
 
     for (int row = 0; row < grid.length; row++) {
