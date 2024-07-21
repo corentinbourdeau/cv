@@ -1,4 +1,5 @@
 import 'package:cv/common/app_bar.dart';
+import 'package:cv/lenia/lenia_view.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:cv/life/life_view.dart';
@@ -196,7 +197,6 @@ class Project extends StatelessWidget {
   final String name;
   final String link;
   final String status;
-  final bool isLinked;
   final String description;
 
   const Project({
@@ -205,7 +205,6 @@ class Project extends StatelessWidget {
     required this.link,
     required this.name,
     required this.status,
-    required this.isLinked,
     required this.description,
   });
 
@@ -242,11 +241,21 @@ class Project extends StatelessWidget {
                         color: Colors.blue,
                       ),
                     ),
-                    onTap: () => (isLinked
-                        ? launchUrlString(link)
-                        : Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const LifeGame(),
-                          ))),
+                    onTap: () => (
+                      link == "lifeGame"
+                          ? Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => const LifeGame(),
+                              ),
+                            )
+                          : link == "leniaGame"
+                              ? Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const LeniaGame(),
+                                  ),
+                                )
+                              : launchUrlString(link),
+                    ),
                   )
                 ],
               ),
@@ -288,7 +297,6 @@ class Projects extends StatelessWidget {
           ),
           Project(
             language: "React App",
-            isLinked: false,
             link: "https://hangman-cb.vercel.app/",
             name: "Hangman",
             status: "Fini",
@@ -296,7 +304,6 @@ class Projects extends StatelessWidget {
           ),
           Project(
             language: "Flutter",
-            isLinked: false,
             link: "https://www.gildasbourdeau.fr/",
             name: "2AMS",
             status: "Fini",
@@ -304,16 +311,22 @@ class Projects extends StatelessWidget {
           ),
           Project(
             language: "Flutter",
-            isLinked: false,
-            link: "",
+            link: "lifeGame",
             name: "Jeu de la vie",
             status: "Fini",
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
           ),
           Project(
+            language: "Flutter",
+            link: "leniaGame",
+            name: "Jeu de lenia",
+            status: "Fini",
+            description:
+                "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
+          ),
+          Project(
             language: "React",
-            isLinked: true,
             link: "",
             name: "CoUp",
             status: "En cours",
