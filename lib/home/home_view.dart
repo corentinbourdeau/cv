@@ -32,7 +32,20 @@ class Presentation extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 0.05 * MediaQuery.of(context).size.height,
-                foregroundImage: const AssetImage('assets/images/profil.jpg'),
+                backgroundColor: Colors.transparent,
+                child: Transform.scale(
+                  scale: 2, // Ajustez le facteur de zoom ici
+                  child: ClipOval(
+                    child: SizedBox(
+                      width: 0.025 * MediaQuery.of(context).size.height * 2,
+                      height: 0.035 * MediaQuery.of(context).size.height * 2,
+                      child: Image.asset(
+                        'assets/images/profil.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(width: 10),
               const Expanded(
@@ -45,6 +58,9 @@ class Presentation extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(
+            height: 30,
+          )
         ],
       ),
     );
