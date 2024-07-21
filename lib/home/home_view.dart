@@ -1,8 +1,6 @@
 import 'package:cv/common/app_bar.dart';
-import 'package:cv/lenia/lenia_view.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
-import 'package:cv/life/life_view.dart';
 
 class Presentation extends StatelessWidget {
   const Presentation({super.key});
@@ -243,17 +241,9 @@ class Project extends StatelessWidget {
                     ),
                     onTap: () => (
                       link == "lifeGame"
-                          ? Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => const LifeGame(),
-                              ),
-                            )
+                          ? Navigator.of(context).pushNamed('/lifegame')
                           : link == "leniaGame"
-                              ? Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) => const LeniaGame(),
-                                  ),
-                                )
+                              ? Navigator.of(context).pushNamed('/leniagame')
                               : launchUrlString(link),
                     ),
                   )

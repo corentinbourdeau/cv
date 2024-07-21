@@ -1,3 +1,5 @@
+import 'package:cv/lenia/lenia_view.dart';
+import 'package:cv/life/life_view.dart';
 import 'package:flutter/material.dart';
 import 'package:cv/home/home_view.dart';
 
@@ -17,7 +19,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      routes: {
+        '/': (context) => const  HomePage(),
+        '/lifegame': (context) => const LifeGame(),
+        '/leniagame': (context) => const LeniaGame(),
+      },
     );
   }
 }
