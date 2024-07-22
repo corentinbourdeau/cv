@@ -53,7 +53,7 @@ class _GameOfLeniaState extends State<GameOfLenia> {
     setState(() {
       isRunning = true;
     });
-    timer = Timer.periodic(const Duration(milliseconds: 300), (timer) {
+    timer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
       setState(() {
         generation += 1;
         _updateGrid();
