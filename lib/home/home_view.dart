@@ -1,6 +1,7 @@
 import 'package:cv/common/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:cv/styles/texts.dart';
 
 class Presentation extends StatelessWidget {
   const Presentation({super.key});
@@ -67,6 +68,52 @@ class Presentation extends StatelessWidget {
   }
 }
 
+class Experience extends StatelessWidget {
+  final String title;
+  final String date;
+  final String text;
+  const Experience({
+    super.key,
+    required this.title,
+    required this.text,
+    required this.date,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          title,
+          style: experienceTitleStyle,
+        ),
+        const SizedBox(
+          height: 2,
+        ),
+        Text(
+          date,
+          style: experienceDateStyle,
+        ),
+        const SizedBox(
+          height: 3,
+        ),
+        Text(
+          text,
+          style: experienceTextStyle,
+          textAlign: TextAlign.justify,
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+      ],
+    );
+  }
+}
+
 class Experiencies extends StatelessWidget {
   const Experiencies({super.key});
 
@@ -93,32 +140,28 @@ class Experiencies extends StatelessWidget {
               ),
             ),
           ),
-          Text("Stagiaire fullstack Web"),
-          Text("Talentsquare | Septembre 2023 - Août 2024"),
-          Text("Développement d’"
-              "un logiciel de recrutement en Belgique. Mes tâches consistent à"
-              "implémenter et améliorer les différentes fonctionnalités. L’"
-              "application web est"
-              "programmée en Python et AngularJS, ainsi que l’"
-              "application mobile en flutter"),
-          Text("Développeur fullstack - Projet de fin d'étude"),
-          Text("Outside EIP | Septembre 2021 - Décembre 2023"),
-          Text(
-              "Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer"
-              "l'envie de découvrir la faune et la flore qui nous entoure. Notre application est"
-              "développée en Java, React Natif ainsi que Vue js"),
-          Text("Stagiaire Full Stack Web"),
-          Text("SIGMA | Mars - Septembre 2022"),
-          Text(
-              "Développement d'un logiciel interne pour remplacer trois applications existantes par"
-              "une seule, plus moderne et pratique. Utilisation de Symfony (PHP), React (front-end)"
-              "et SQL (base de données). Affichage sur des télévisions connectées à des Raspberry"
-              "Pi, contrôlé via un dashboard."),
-          Text("Stagiaire Full Stack"),
-          Text("ICI | Septembre - Décembre 2020"),
-          Text(
-              "Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de"
-              "Centrale de Nantes afin de découvrir le monde des calculs intensifs. (React JS)"),
+          Experience(
+            title: "Développeur fullstack - Projet de fin d'étude",
+            date: "Outside EIP | Septembre 2021 - Décembre 2023",
+            text:
+                "Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer"
+                "l'envie de découvrir la faune et la flore qui nous entoure. Notre application est"
+                "développée en Java, React Native ainsi que Vue js",
+          ),
+          Experience(
+              title: "Stagiaire Full Stack Web",
+              date: "SIGMA | Mars - Septembre 2022",
+              text:
+                  "Développement d'un logiciel interne pour remplacer trois applications existantes par"
+                  "une seule, plus moderne et pratique. Utilisation de Symfony (PHP), React (front-end)"
+                  "et SQL (base de données). Affichage sur des télévisions connectées à des Raspberry"
+                  "Pi, contrôlé via un dashboard."),
+          Experience(
+              title: "Stagiaire Full Stack",
+              date: "ICI | Septembre - Décembre 2020",
+              text:
+                  "Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de"
+                  "Centrale de Nantes afin de découvrir le monde des calculs intensifs. (React JS)"),
         ],
       ),
     );
@@ -183,23 +226,26 @@ class Formation extends StatelessWidget {
               ),
             ),
           ),
-          Text("EPITECH - NEW YORK (USA) / PARIS (FRANCE)"),
-          Text(
-              "Expert en Technologies de l’Information | septembre 2022 - Juin 2024"),
-          Text(
-              "• Notre cursus nous propose de partir à l'étranger en 4ème année. J'ai"
-              "choisi l'école New School Center For Media pour découvrir le monde de"
-              "la finance ainsi que l'économie américaine."),
-          Text("• Nous avons notamment réaliser des algorithmes de trading."),
-          Text("EPITECH - NANTES (FRANCE) / BARCELONE (ESPAGNE)"),
-          Text("Bachelor | septembre 2019 - juin 2022"),
-          Text("• Programmation en C, C++"
-              ", Python, Javascript, Java, PHP, Dart, Devops"
-              "(Docker, kubernetes, jenkins), Flutter"),
-          Text("Saint Joseph du Loquidy - NANTES"),
-          Text("Collège et lycée"),
-          Text("• Bac S spécialité SVT option ISN (2019)"),
-          Text("• Brevet Mention assez bien (2014)"),
+          Experience(
+              title: "EPITECH - NEW YORK (USA) / PARIS (FRANCE)",
+              text:
+                  "• Notre cursus nous propose de partir à l'étranger en 4ème année. J'ai "
+                  "choisi l'école New School Center For Media pour découvrir le monde de"
+                  "la finance ainsi que l'économie américaine.\n"
+                  "• Nous avons notamment réaliser des algorithmes de trading.",
+              date:
+                  "Expert en Technologies de l’Information | septembre 2022 - Juin 2024"),
+          Experience(
+              title: "EPITECH - NANTES (FRANCE) / BARCELONE (ESPAGNE)",
+              text: "• Programmation en C, C++"
+                  ", Python, Javascript, Java, PHP, Dart, Devops"
+                  "(Docker, kubernetes, jenkins), Flutter",
+              date: "Bachelor | septembre 2019 - juin 2022"),
+          Experience(
+              title: "Saint Joseph du Loquidy - NANTES",
+              text: "• Bac S spécialité SVT option ISN (2019)\n"
+                  "• Brevet Mention assez bien (2015)",
+              date: "Collège et lycée | septembre 2012 - juin 2019")
         ],
       ),
     );
@@ -224,52 +270,45 @@ class Project extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      padding: const EdgeInsets.all(2),
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(255, 255, 255, 0.2),
+    return InkWell(
+      onTap: () => (
+        link == "lifeGame"
+            ? Navigator.of(context).pushNamed('/lifegame')
+            : link == "leniaGame"
+                ? Navigator.of(context).pushNamed('/leniagame')
+                : launchUrlString(link),
       ),
-      child: Stack(
-        children: [
-          Positioned(
-            top: 1,
-            right: 1,
-            child: Text(
-              status,
-              style: const TextStyle(
-                color: Colors.white,
-              ),
+      child: Tooltip(
+        message: 'Clique pour voir le projet',
+        child: Container(
+          width: double.infinity,
+          margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          padding: const EdgeInsets.all(2),
+          decoration: const BoxDecoration(
+            color: Color.fromRGBO(255, 255, 255, 0.2),
+            borderRadius: BorderRadius.all(
+              Radius.circular(6),
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Stack(
             children: [
-              Row(
-                children: [
-                  Text('$name :'),
-                  InkWell(
-                    child: const Text(
-                      "Voir",
-                      style: TextStyle(
-                        color: Colors.blue,
-                      ),
-                    ),
-                    onTap: () => (
-                      link == "lifeGame"
-                          ? Navigator.of(context).pushNamed('/lifegame')
-                          : link == "leniaGame"
-                              ? Navigator.of(context).pushNamed('/leniagame')
-                              : launchUrlString(link),
-                    ),
-                  )
-                ],
+              Positioned(
+                top: 1,
+                right: 1,
+                child: Text(
+                  status,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
-              Text('Language utilisé : $language'),
-              Text(description),
+              Experience(
+                  title: name,
+                  text: description,
+                  date: 'Language utilisé : $language')
             ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -344,6 +383,44 @@ class Projects extends StatelessWidget {
   }
 }
 
+class Passions extends StatelessWidget {
+  const Passions({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(12),
+        ),
+        color: Color.fromARGB(96, 255, 255, 255),
+      ),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Text(
+              "Mes langues",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Text(
+            "Français (Natif)\n"
+            "Anglais (C1-TOEIC:750)\n"
+            "Espagnol (A2)",
+            style: experienceTextStyle,
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -379,6 +456,7 @@ class HomePage extends StatelessWidget {
                   Formation(),
                   Projects(),
                   Contact(),
+                  Passions(),
                 ],
               ),
             ),
