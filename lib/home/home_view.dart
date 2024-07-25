@@ -372,7 +372,7 @@ class Projects extends StatelessWidget {
           ),
           Project(
             language: "React",
-            link: "",
+            link: "https://coupweb.vercel.app/",
             name: "CoUp",
             status: "En cours",
             description: "Dashboard & App : Boîte à idée",
