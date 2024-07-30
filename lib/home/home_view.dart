@@ -182,18 +182,28 @@ class Contact extends StatelessWidget {
         ),
         color: Color.fromARGB(96, 255, 255, 255),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
+          const Center(
             child: Text(
               "Comment me contacter",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          Text("E-mail : corentinbourdeau2001@gmail.com"),
-          Text("Téléphone : +33 6 18 36 16 96"),
-          Text("Adresse : La Chapelle Sur Erdre"),
+          const Text("E-mail : corentinbourdeau2001@gmail.com"),
+          const Text("Téléphone : +33 6 18 36 16 96"),
+          const Text(
+              "Adresse : 16 rue des flamants roses 44240 La Chapelle Sur Erdre"),
+          InkWell(
+            onTap: () => launchUrlString("https://github.com/corentinbourdeau"),
+            child: const Text("GitHub : corentinbourdeau"),
+          ),
+          InkWell(
+            onTap: () => launchUrlString(
+                "https://www.linkedin.com/in/corentin-bourdeau-a50a31196/"),
+            child: const Text("LinkedIn : Corentin BOURDEAU"),
+          )
         ],
       ),
     );
