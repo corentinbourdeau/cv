@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LifeGame extends StatelessWidget {
   const LifeGame({super.key});
@@ -11,7 +12,7 @@ class LifeGame extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              context.go('/');
             },
             icon: const Icon(
               Icons.navigate_before,

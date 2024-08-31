@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:go_router/go_router.dart';
 
 class LeniaGame extends StatelessWidget {
   const LeniaGame({super.key});
@@ -12,7 +13,7 @@ class LeniaGame extends StatelessWidget {
         appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              context.go('/');
             },
             icon: const Icon(
               Icons.navigate_before,

@@ -2,6 +2,9 @@ import 'package:cv/common/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:cv/styles/texts.dart';
+import 'package:go_router/go_router.dart';
+import 'package:cv/common/experience.dart';
+import 'package:cv/home/formation_view.dart';
 
 class Presentation extends StatelessWidget {
   const Presentation({super.key});
@@ -68,52 +71,6 @@ class Presentation extends StatelessWidget {
   }
 }
 
-class Experience extends StatelessWidget {
-  final String title;
-  final String date;
-  final String text;
-  const Experience({
-    super.key,
-    required this.title,
-    required this.text,
-    required this.date,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(
-          height: 10,
-        ),
-        Text(
-          title,
-          style: experienceTitleStyle,
-        ),
-        const SizedBox(
-          height: 2,
-        ),
-        Text(
-          date,
-          style: experienceDateStyle,
-        ),
-        const SizedBox(
-          height: 3,
-        ),
-        Text(
-          text,
-          style: experienceTextStyle,
-          textAlign: TextAlign.justify,
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-      ],
-    );
-  }
-}
-
 class Experiencies extends StatelessWidget {
   const Experiencies({super.key});
 
@@ -141,6 +98,14 @@ class Experiencies extends StatelessWidget {
             ),
           ),
           Experience(
+            title: "Stagiaire fullstack Web/Mobile",
+            date: "Talentsquare | Septembre 2023 - Août 2024",
+            text:
+                "Développement d'un logiciel de recrutement en Belgique. Mes tâches consistent à "
+                "implémenter et améliorer les différentes fonctionnalités. L’application web est"
+                "programmée en Python et AngularJS, ainsi que l’ application mobile en flutter",
+          ),
+          Experience(
             title: "Développeur fullstack - Projet de fin d'étude",
             date: "Outside EIP | Septembre 2021 - Décembre 2023",
             text:
@@ -149,7 +114,7 @@ class Experiencies extends StatelessWidget {
                 "développée en Java, React Native ainsi que Vue js",
           ),
           Experience(
-              title: "Stagiaire Full Stack Web",
+              title: "Stagiaire fullstack Web",
               date: "SIGMA | Mars - Septembre 2022",
               text:
                   "Développement d'un logiciel interne pour remplacer trois applications existantes par"
@@ -210,58 +175,6 @@ class Contact extends StatelessWidget {
   }
 }
 
-class Formation extends StatelessWidget {
-  const Formation({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(12),
-        ),
-        color: Color.fromARGB(96, 255, 255, 255),
-      ),
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Text(
-              "FORMATIONS",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          Experience(
-              title: "EPITECH - NEW YORK (USA) / PARIS (FRANCE)",
-              text:
-                  "• Notre cursus nous propose de partir à l'étranger en 4ème année. J'ai "
-                  "choisi l'école New School Center For Media pour découvrir le monde de"
-                  "la finance ainsi que l'économie américaine.\n"
-                  "• Nous avons notamment réaliser des algorithmes de trading.",
-              date:
-                  "Expert en Technologies de l’Information | septembre 2022 - Juin 2024"),
-          Experience(
-              title: "EPITECH - NANTES (FRANCE) / BARCELONE (ESPAGNE)",
-              text: "• Programmation en C, C++"
-                  ", Python, Javascript, Java, PHP, Dart, Devops"
-                  "(Docker, kubernetes, jenkins), Flutter",
-              date: "Bachelor | septembre 2019 - juin 2022"),
-          Experience(
-              title: "Saint Joseph du Loquidy - NANTES",
-              text: "• Bac S spécialité SVT option ISN (2019)\n"
-                  "• Brevet Mention assez bien (2015)",
-              date: "Collège et lycée | septembre 2012 - juin 2019")
-        ],
-      ),
-    );
-  }
-}
-
 class Project extends StatelessWidget {
   final String language;
   final String name;
@@ -281,13 +194,13 @@ class Project extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => (
-        link == "lifeGame"
-            ? Navigator.of(context).pushNamed('/lifegame')
-            : link == "leniaGame"
-                ? Navigator.of(context).pushNamed('/leniagame')
-                : launchUrlString(link),
-      ),
+      onTap: () => (link == "lifeGame"
+          ? context.go('/lifegame')
+          : link == "leniaGame"
+              ? context.go('/leniaGame')
+              : link == "converter"
+                  ? context.go('/converter')
+                  : launchUrlString(link)),
       child: Tooltip(
         message: 'Clique pour voir le projet',
         child: Container(
@@ -380,6 +293,12 @@ class Projects extends StatelessWidget {
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
           ),
+          Project(
+              language: "Flutter",
+              link: "converter",
+              name: "Converter",
+              status: "En cours",
+              description: "Converter of km/h by m/s ..."),
           Project(
             language: "React",
             link: "https://coupweb.vercel.app/",
