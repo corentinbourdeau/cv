@@ -73,7 +73,7 @@ class Converter extends StatelessWidget {
                     title: "Meters by secondes to km/h",
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     padding: const EdgeInsets.all(5),
                     decoration: const BoxDecoration(
                       color: Colors.white,
@@ -112,7 +112,7 @@ class Converter extends StatelessWidget {
                     title: "Pace to km/h",
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     padding: const EdgeInsets.all(5),
                     decoration: const BoxDecoration(
                       color: Colors.white,
@@ -151,7 +151,7 @@ class Converter extends StatelessWidget {
                     title: "km/h to pace",
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     padding: const EdgeInsets.all(5),
                     decoration: const BoxDecoration(
                       color: Colors.white,

@@ -54,9 +54,9 @@ class Presentation extends StatelessWidget {
               const SizedBox(width: 10),
               const Expanded(
                 child: Text(
-                  "Étudiant en cinquième année à l'École EPITECH depuis septembre 2019. "
-                  "Je suis spécialisé dans différents langages de programmation : React Native, Flutter et Vue.js. "
-                  "Je suis à l'aise à découvrir et apprendre de nouveaux langages.",
+                  "Diplomé chez Epitech en tant que expert en Technologies de l’Information.\n\nJe suis aujourd'hui à la recherche d'un emploi."
+                  "Mes spécialités sont le front end avec React, React Native et Dart."
+                  "Je suis également à l'aise avec le python.",
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -98,35 +98,36 @@ class Experiencies extends StatelessWidget {
             ),
           ),
           Experience(
-            title: "Stagiaire fullstack Web/Mobile",
+            title: "Stagiaire fullstack Web et Mobile",
             date: "Talentsquare | Septembre 2023 - Août 2024",
             text:
-                "Développement d'un logiciel de recrutement en Belgique. Mes tâches consistent à "
-                "implémenter et améliorer les différentes fonctionnalités. L’application web est"
-                "programmée en Python et AngularJS, ainsi que l’ application mobile en flutter",
+                "• Partime et Stage chez Talentquare : AngularJs/Python/Flutter"
+                "Développement d'un logiciel de recrutement en Belgique.\nMes tâches consistent à "
+                "implémenter et améliorer les différentes fonctionnalités. L’application web est "
+                "programmée en Python et AngularJS, ainsi que l’ application mobile en flutter. La base de donnée est en PostgreSQL.",
           ),
           Experience(
             title: "Développeur fullstack - Projet de fin d'étude",
             date: "Outside EIP | Septembre 2021 - Décembre 2023",
             text:
-                "Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer"
-                "l'envie de découvrir la faune et la flore qui nous entoure. Notre application est"
-                "développée en Java, React Native ainsi que Vue js",
+                "Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer "
+                "l'envie de découvrir la faune et la flore qui nous entoure. Notre application est "
+                "développée en Java, React Native ainsi qu'un dashboard en Vue js",
           ),
           Experience(
               title: "Stagiaire fullstack Web",
-              date: "SIGMA | Mars - Septembre 2022",
+              date: "Sigma | Mars - Septembre 2022",
               text:
-                  "Développement d'un logiciel interne pour remplacer trois applications existantes par"
-                  "une seule, plus moderne et pratique. Utilisation de Symfony (PHP), React (front-end)"
+                  "Développement d'un logiciel interne pour remplacer trois applications existantes par "
+                  "une seule, plus moderne et pratique. Utilisation de PHP (Symphony), React (front end) "
                   "et SQL (base de données). Affichage sur des télévisions connectées à des Raspberry"
                   "Pi, contrôlé via un dashboard."),
           Experience(
               title: "Stagiaire Full Stack",
-              date: "ICI | Septembre - Décembre 2020",
+              date: "ICI (Institut de Calcul Intensif) | Septembre - Décembre 2020",
               text:
-                  "Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de"
-                  "Centrale de Nantes afin de découvrir le monde des calculs intensifs. (React JS)"),
+                  "Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de "
+                  "Centrale de Nantes afin qu'ils découvrent le monde des calculs intensifs. (Javascript : React)"),
         ],
       ),
     );
@@ -297,7 +298,7 @@ class Projects extends StatelessWidget {
               language: "Flutter",
               link: "converter",
               name: "Converter",
-              status: "En cours",
+              status: "Fini",
               description: "Converter of km/h by m/s ..."),
           Project(
             language: "React",
@@ -367,7 +368,7 @@ class HomePage extends StatelessWidget {
             end: Alignment.bottomRight,
             colors: [
               Colors.blue,
-              Colors.red,
+              Color.fromARGB(255, 165, 255, 197),
             ],
           ),
         ),

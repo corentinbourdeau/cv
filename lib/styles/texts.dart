@@ -15,6 +15,6 @@ const experienceDateStyle = TextStyle(
 
 const experienceTextStyle = TextStyle(
   color: textColor,
-  fontSize: 12.0,
+  fontSize: 13.0,
   fontWeight: FontWeight.w800,
 );
