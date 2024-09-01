@@ -3,6 +3,29 @@ import 'package:provider/provider.dart';
 import 'package:cv/converter/converter_view_model.dart';
 import 'package:go_router/go_router.dart';
 
+class Title extends StatelessWidget {
+  final String title;
+  const Title({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      width: MediaQuery.of(context).size.width * 0.5,
+      child: Text(
+        title,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+          fontSize: 20,
+        ),
+      ),
+    );
+  }
+}
+
 class Converter extends StatelessWidget {
   const Converter({super.key});
 
@@ -46,33 +69,112 @@ class Converter extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Vitesse"),
-                      const SizedBox(width: 10),
-                      SizedBox(
-                        width: 150,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          controller: viewModel.meter,
-                          decoration: const InputDecoration(labelText: 'Meter'),
-                        ),
+                  const Title(
+                    title: "Meters by secondes to km/h",
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    padding: const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
                       ),
-                      const SizedBox(width: 10),
-                      SizedBox(
-                        width: 150,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          controller: viewModel.secondes,
-                          decoration:
-                              const InputDecoration(labelText: 'Seconds'),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: viewModel.meter,
+                            decoration:
+                                const InputDecoration(labelText: 'Meters'),
+                          ),
                         ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: 100,
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: viewModel.secondes,
+                            decoration:
+                                const InputDecoration(labelText: 'Seconds'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text("${viewModel.result.toStringAsFixed(2)} km/h"),
+                      ],
+                    ),
+                  ),
+                  const Title(
+                    title: "Pace to km/h",
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    padding: const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
                       ),
-                      const SizedBox(width: 10),
-                      Text(
-                          "Result: ${viewModel.result.toStringAsFixed(2)} km/h"),
-                    ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: viewModel.minutes,
+                            decoration:
+                                const InputDecoration(labelText: 'Minutes'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        SizedBox(
+                          width: 100,
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: viewModel.secondes,
+                            decoration:
+                                const InputDecoration(labelText: 'Seconds'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text("${viewModel.resultPace.toStringAsFixed(2)} km/h"),
+                      ],
+                    ),
+                  ),
+                  const Title(
+                    title: "km/h to pace",
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    padding: const EdgeInsets.all(5),
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: TextField(
+                            keyboardType: TextInputType.number,
+                            controller: viewModel.speed,
+                            decoration:
+                                const InputDecoration(labelText: 'Speed'),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Text("${viewModel.resultSpeed}/km"),
+                      ],
+                    ),
                   ),
                 ],
               ),
