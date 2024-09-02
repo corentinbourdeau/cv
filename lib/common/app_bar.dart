@@ -34,7 +34,7 @@ class MyAppBar extends StatelessWidget {
 
             // Créer un élément pour le téléchargement
             html.AnchorElement anchorElement = html.AnchorElement(href: url)
-              ..setAttribute("download", "corentin_bourdeau.pdf")
+              ..setAttribute("download", "CV_Corentin_Bourdeau.pdf")
               ..click();
           },
           child: const Icon(

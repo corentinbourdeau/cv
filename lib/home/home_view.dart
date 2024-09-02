@@ -54,9 +54,11 @@ class Presentation extends StatelessWidget {
               const SizedBox(width: 10),
               const Expanded(
                 child: Text(
-                  "Diplomé chez Epitech en tant que expert en Technologies de l’Information.\n\nJe suis aujourd'hui à la recherche d'un emploi."
-                  "Mes spécialités sont le front end avec React, React Native et Dart."
-                  "Je suis également à l'aise avec le python.",
+                  "    Diplômé de l'École EPITECH en tant qu'expert en Technologies de l'Information, je suis passionné par le développement front-end.\n\n"
+                  "    J'ai une solide expérience avec les technologies React, React Native, Dart et Python, et je suis toujours enthousiaste à l'idée de "
+                  "découvrir et maîtriser de nouveaux langages de programmation. Mon parcours à EPITECH, où j'ai acquis une formation rigoureuse et "
+                  "polyvalente, m'a permis de développer des compétences techniques approfondies tout en favorisant mon adaptabilité et ma capacité d'apprentissage.\n\n"
+                  "    Aujourd'hui, je suis à la recherche d'une opportunité professionnelle qui me permettra de mettre en pratique mes compétences et de continuer à grandir en tant que développeur.",
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -101,16 +103,16 @@ class Experiencies extends StatelessWidget {
             title: "Stagiaire fullstack Web et Mobile",
             date: "Talentsquare | Septembre 2023 - Août 2024",
             text:
-                "• Partime et Stage chez Talentquare : AngularJs/Python/Flutter"
-                "Développement d'un logiciel de recrutement en Belgique.\nMes tâches consistent à "
-                "implémenter et améliorer les différentes fonctionnalités. L’application web est "
+                "• Partime et Stage chez Talentsquare : AngularJs/Python/Flutter. "
+                "Développement d'un logiciel de recrutement en Belgique.\n\n"
+                "• Mes tâches consistent à implémenter et améliorer les différentes fonctionnalités. L’application web est "
                 "programmée en Python et AngularJS, ainsi que l’ application mobile en flutter. La base de donnée est en PostgreSQL.",
           ),
           Experience(
             title: "Développeur fullstack - Projet de fin d'étude",
             date: "Outside EIP | Septembre 2021 - Décembre 2023",
             text:
-                "Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer "
+                "• Mon projet de fin d'étude s'appelle Outside. L'objectif de notre projet est de renouer "
                 "l'envie de découvrir la faune et la flore qui nous entoure. Notre application est "
                 "développée en Java, React Native ainsi qu'un dashboard en Vue js",
           ),
@@ -118,7 +120,7 @@ class Experiencies extends StatelessWidget {
               title: "Stagiaire fullstack Web",
               date: "Sigma | Mars - Septembre 2022",
               text:
-                  "Développement d'un logiciel interne pour remplacer trois applications existantes par "
+                  "• Développement d'un logiciel interne pour remplacer trois applications existantes par "
                   "une seule, plus moderne et pratique. Utilisation de PHP (Symphony), React (front end) "
                   "et SQL (base de données). Affichage sur des télévisions connectées à des Raspberry"
                   "Pi, contrôlé via un dashboard."),
@@ -126,7 +128,7 @@ class Experiencies extends StatelessWidget {
               title: "Stagiaire Full Stack",
               date: "ICI (Institut de Calcul Intensif) | Septembre - Décembre 2020",
               text:
-                  "Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de "
+                  "• Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de "
                   "Centrale de Nantes afin qu'ils découvrent le monde des calculs intensifs. (Javascript : React)"),
         ],
       ),

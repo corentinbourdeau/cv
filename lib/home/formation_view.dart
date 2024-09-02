@@ -175,7 +175,7 @@ class Formation extends StatelessWidget {
                     "• Introduction à l'IA et au web\n"
                     "• Mathématiques: Exercices en Python.\n"
                     "• Sécurité (Capture-the-Flag).\n"
-                    "• Module d'Administrateur système: gestion de VIRTUAL Machine (VM)\n"
+                    "• Module d'Administrateur système: gestion de Virtual Machine (VM)\n"
                     "• Projet de fin d'année : Jeux vidéo de rôle (RPG) isométrique fait en C\n",
                 date: "1ère année Epitech"),
           ),
