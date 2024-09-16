@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
       title: 'Corentin Bourdeau',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Lato',
         useMaterial3: true,
       ),
     );

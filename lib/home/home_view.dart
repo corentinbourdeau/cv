@@ -12,7 +12,7 @@ class Presentation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(20),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
@@ -28,6 +28,7 @@ class Presentation extends StatelessWidget {
               "Profil professionnelle",
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: 'Lato',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -42,7 +43,7 @@ class Presentation extends StatelessWidget {
                   child: ClipOval(
                     child: SizedBox(
                       width: 0.025 * MediaQuery.of(context).size.height * 2,
-                      height: 0.035 * MediaQuery.of(context).size.height * 2,
+                      height: 0.025 * MediaQuery.of(context).size.height * 2,
                       child: Image.asset(
                         'assets/images/profil.jpg',
                         fit: BoxFit.cover,
@@ -51,15 +52,23 @@ class Presentation extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 20),
               const Expanded(
-                child: Text(
-                  "    Diplômé de l'École EPITECH en tant qu'expert en Technologies de l'Information, je suis passionné par le développement front-end.\n\n"
-                  "    J'ai une solide expérience avec les technologies React, React Native, Dart et Python, et je suis toujours enthousiaste à l'idée de "
-                  "découvrir et maîtriser de nouveaux langages de programmation. Mon parcours à EPITECH, où j'ai acquis une formation rigoureuse et "
-                  "polyvalente, m'a permis de développer des compétences techniques approfondies tout en favorisant mon adaptabilité et ma capacité d'apprentissage.\n\n"
-                  "    Aujourd'hui, je suis à la recherche d'une opportunité professionnelle qui me permettra de mettre en pratique mes compétences et de continuer à grandir en tant que développeur.",
-                  textAlign: TextAlign.justify,
+                child: Column(
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      "    Diplômé de l'École EPITECH en tant qu'expert en Technologies de l'Information, je suis passionné par le développement front-end.\n\n"
+                      "    J'ai une solide expérience avec les technologies React, React Native, Dart et Python, et je suis toujours enthousiaste à l'idée de "
+                      "découvrir et maîtriser de nouveaux langages de programmation. Mon parcours à EPITECH, où j'ai acquis une formation rigoureuse et "
+                      "polyvalente, m'a permis de développer des compétences techniques approfondies tout en favorisant mon adaptabilité et ma capacité d'apprentissage.\n\n"
+                      "    Aujourd'hui, je suis à la recherche d'une opportunité professionnelle qui me permettra de mettre en pratique mes compétences et de continuer à grandir en tant que développeur.",
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        fontFamily: 'Lato',
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -95,6 +104,7 @@ class Experiencies extends StatelessWidget {
               "EXPÉRIENCE PROFESSIONNELLE",
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: 'Lato',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -126,7 +136,8 @@ class Experiencies extends StatelessWidget {
                   "Pi, contrôlé via un dashboard."),
           Experience(
               title: "Stagiaire Full Stack",
-              date: "ICI (Institut de Calcul Intensif) | Septembre - Décembre 2020",
+              date:
+                  "ICI (Institut de Calcul Intensif) | Septembre - Décembre 2020",
               text:
                   "• Réalisation d'un site internet sur des Raspberry Pi pour les étudiants de l'école de "
                   "Centrale de Nantes afin qu'ils découvrent le monde des calculs intensifs. (Javascript : React)"),
@@ -156,21 +167,23 @@ class Contact extends StatelessWidget {
           const Center(
             child: Text(
               "Comment me contacter",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Lato',
+              ),
             ),
           ),
-          const Text("E-mail : corentinbourdeau2001@gmail.com"),
-          const Text("Téléphone : +33 6 18 36 16 96"),
-          const Text(
-              "Adresse : 16 rue des flamants roses 44240 La Chapelle Sur Erdre"),
+          const Text("E-mail : corentinbourdeau2001@gmail.com", style: TextStyle(fontFamily: 'Lato',),),
+          const Text("Téléphone : +33 6 18 36 16 96", style: TextStyle(fontFamily: 'Lato',),),
           InkWell(
             onTap: () => launchUrlString("https://github.com/corentinbourdeau"),
-            child: const Text("GitHub : corentinbourdeau"),
+            child: const Text("GitHub : corentinbourdeau", style: TextStyle(fontFamily: 'Lato',),),
           ),
           InkWell(
             onTap: () => launchUrlString(
                 "https://www.linkedin.com/in/corentin-bourdeau-a50a31196/"),
-            child: const Text("LinkedIn : Corentin BOURDEAU"),
+            child: const Text("LinkedIn : Corentin BOURDEAU", style: TextStyle(fontFamily: 'Lato',),),
           )
         ],
       ),
@@ -262,6 +275,7 @@ class Projects extends StatelessWidget {
               "Mes projets",
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: 'Lato',
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -337,6 +351,7 @@ class Passions extends StatelessWidget {
               "Mes langues",
               style: TextStyle(
                 fontSize: 20,
+                fontFamily: 'Lato',
                 fontWeight: FontWeight.bold,
               ),
             ),
