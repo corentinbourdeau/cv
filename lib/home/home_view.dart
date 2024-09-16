@@ -1,5 +1,6 @@
 import 'package:cv/common/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:cv/styles/texts.dart';
 import 'package:go_router/go_router.dart';
@@ -174,16 +175,36 @@ class Contact extends StatelessWidget {
               ),
             ),
           ),
-          const Text("E-mail : corentinbourdeau2001@gmail.com", style: TextStyle(fontFamily: 'Lato',),),
-          const Text("Téléphone : +33 6 18 36 16 96", style: TextStyle(fontFamily: 'Lato',),),
+          const Text(
+            "E-mail : corentinbourdeau2001@gmail.com",
+            style: TextStyle(
+              fontFamily: 'Lato',
+            ),
+          ),
+          const Text(
+            "Téléphone : +33 6 18 36 16 96",
+            style: TextStyle(
+              fontFamily: 'Lato',
+            ),
+          ),
           InkWell(
             onTap: () => launchUrlString("https://github.com/corentinbourdeau"),
-            child: const Text("GitHub : corentinbourdeau", style: TextStyle(fontFamily: 'Lato',),),
+            child: const Text(
+              "GitHub : corentinbourdeau",
+              style: TextStyle(
+                fontFamily: 'Lato',
+              ),
+            ),
           ),
           InkWell(
             onTap: () => launchUrlString(
                 "https://www.linkedin.com/in/corentin-bourdeau-a50a31196/"),
-            child: const Text("LinkedIn : Corentin BOURDEAU", style: TextStyle(fontFamily: 'Lato',),),
+            child: const Text(
+              "LinkedIn : Corentin BOURDEAU",
+              style: TextStyle(
+                fontFamily: 'Lato',
+              ),
+            ),
           )
         ],
       ),
@@ -197,6 +218,7 @@ class Project extends StatelessWidget {
   final String link;
   final String status;
   final String description;
+  final String image;
 
   const Project({
     super.key,
@@ -205,6 +227,7 @@ class Project extends StatelessWidget {
     required this.name,
     required this.status,
     required this.description,
+    required this.image,
   });
 
   @override
@@ -241,10 +264,22 @@ class Project extends StatelessWidget {
                   ),
                 ),
               ),
-              Experience(
-                  title: name,
-                  text: description,
-                  date: 'Language utilisé : $language')
+              Row(
+                children: [
+                  Image(
+                    width: 0.15 * MediaQuery.of(context).size.height,
+                    image: AssetImage(
+                      image,
+                    ),
+                  ),
+                  Expanded(
+                    child: Experience(
+                        title: name,
+                        text: description,
+                        date: 'Language utilisé : $language'),
+                  )
+                ],
+              )
             ],
           ),
         ),
@@ -286,6 +321,7 @@ class Projects extends StatelessWidget {
             name: "Hangman",
             status: "Fini",
             description: "Jeu du pendu",
+            image: "assets/images/hangman.png",
           ),
           Project(
             language: "Flutter",
@@ -293,6 +329,7 @@ class Projects extends StatelessWidget {
             name: "2AMS",
             status: "Fini",
             description: "Site internet pour une entreprise de rénovation",
+            image: "assets/images/2ams.png",
           ),
           Project(
             language: "Flutter",
@@ -301,6 +338,7 @@ class Projects extends StatelessWidget {
             status: "Fini",
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
+            image: "assets/images/vie.png",
           ),
           Project(
             language: "Flutter",
@@ -309,19 +347,23 @@ class Projects extends StatelessWidget {
             status: "Fini",
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
+            image: "assets/images/lenia.png",
           ),
           Project(
-              language: "Flutter",
-              link: "converter",
-              name: "Converter",
-              status: "Fini",
-              description: "Converter of km/h by m/s ..."),
+            language: "Flutter",
+            link: "converter",
+            name: "Converter",
+            status: "Fini",
+            description: "Converter of km/h by m/s ...",
+            image: "assets/images/converter.png",
+          ),
           Project(
             language: "React",
             link: "https://coupweb.vercel.app/",
             name: "CoUp",
             status: "En cours",
             description: "Dashboard & App : Boîte à idée",
+            image: "assets/images/coup.png",
           ),
         ],
       ),
