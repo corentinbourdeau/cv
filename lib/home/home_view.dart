@@ -1,6 +1,5 @@
 import 'package:cv/common/app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:cv/styles/texts.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +12,7 @@ class Presentation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
