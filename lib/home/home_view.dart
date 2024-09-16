@@ -258,9 +258,9 @@ class Project extends StatelessWidget {
                 top: 1,
                 right: 1,
                 child: Text(
-                  status,
+                  "Status : $status",
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ),
