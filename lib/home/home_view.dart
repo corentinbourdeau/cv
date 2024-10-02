@@ -166,7 +166,7 @@ class Contact extends StatelessWidget {
         children: [
           const Center(
             child: Text(
-              "Comment me contacter",
+              "Me contacter",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -218,6 +218,7 @@ class Project extends StatelessWidget {
   final String status;
   final String description;
   final String image;
+  final String dates;
 
   const Project({
     super.key,
@@ -227,6 +228,7 @@ class Project extends StatelessWidget {
     required this.status,
     required this.description,
     required this.image,
+    required this.dates,
   });
 
   @override
@@ -257,7 +259,8 @@ class Project extends StatelessWidget {
                 top: 1,
                 right: 1,
                 child: Text(
-                  "Status : $status",
+                  "Status : $status\n"
+                  "Dates : $dates",
                   style: const TextStyle(
                     color: Colors.black,
                   ),
@@ -315,20 +318,24 @@ class Projects extends StatelessWidget {
             ),
           ),
           Project(
-            language: "React App",
-            link: "https://hangman-cb.vercel.app/",
-            name: "Hangman",
-            status: "Fini",
-            description: "Jeu du pendu",
-            image: "assets/images/hangman.png",
+            language: "React",
+            link: "https://coupweb.vercel.app/",
+            name: "CoUp",
+            status: "En cours",
+            description: "Dashboard & App : Boîte à idée",
+            image: "assets/images/coup.png",
+            dates: "Janvier 2024 - Maintenant",
           ),
           Project(
-            language: "Flutter",
-            link: "https://www.gildasbourdeau.fr/",
-            name: "2AMS",
+            language: "React / Material UI / Typescript",
+            link:
+                "https://chess-eight-tau.vercel.app",
+            name: "Chronomètre pour échecs",
             status: "Fini",
-            description: "Site internet pour une entreprise de rénovation",
-            image: "assets/images/2ams.png",
+            description:
+                "Chronomètre pour parti d'échecs. Parti de 1,3,5,10,30 minutes par personne avec la possibilité d'ajouter du temps à chaque coup (1,2 ou 3 secondes).",
+            image: "assets/images/chess.png",
+            dates: "Octobre 2024",
           ),
           Project(
             language: "Flutter",
@@ -338,6 +345,7 @@ class Projects extends StatelessWidget {
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
             image: "assets/images/vie.png",
+            dates: "Septembre 2024",
           ),
           Project(
             language: "Flutter",
@@ -347,6 +355,7 @@ class Projects extends StatelessWidget {
             description:
                 "Jeu de simulation mathématique. Des règles très simple mais qui font de lui un système formel",
             image: "assets/images/lenia.png",
+            dates: "Septembre 2024",
           ),
           Project(
             language: "Flutter",
@@ -355,14 +364,25 @@ class Projects extends StatelessWidget {
             status: "Fini",
             description: "Converter of km/h by m/s ...",
             image: "assets/images/converter.png",
+            dates: "Septembre 2024",
           ),
           Project(
-            language: "React",
-            link: "https://coupweb.vercel.app/",
-            name: "CoUp",
-            status: "En cours",
-            description: "Dashboard & App : Boîte à idée",
-            image: "assets/images/coup.png",
+            language: "React App",
+            link: "https://hangman-cb.vercel.app/",
+            name: "Hangman",
+            status: "Fini",
+            description: "Jeu du pendu",
+            image: "assets/images/hangman.png",
+            dates: "Août 2024",
+          ),
+          Project(
+            language: "Flutter",
+            link: "https://www.gildasbourdeau.fr/",
+            name: "2AMS",
+            status: "En Maintient",
+            description: "Site internet pour une entreprise de rénovation",
+            image: "assets/images/2ams.png",
+            dates: "Mars 2019 - Maintenant",
           ),
         ],
       ),
@@ -440,10 +460,10 @@ class HomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Presentation(),
+                  Contact(),
                   Experiencies(),
                   Formation(),
                   Projects(),
-                  Contact(),
                   Passions(),
                 ],
               ),
