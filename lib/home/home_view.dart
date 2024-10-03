@@ -131,7 +131,7 @@ class Experiencies extends StatelessWidget {
               date: "Sigma | Mars - Septembre 2022",
               text:
                   "• Développement d'un logiciel interne pour remplacer trois applications existantes par "
-                  "une seule, plus moderne et pratique. Utilisation de PHP (Symphony), React (front end) "
+                  "une seule, plus moderne et pratique. Utilisation de PHP (Symfony), React (front end) "
                   "et SQL (base de données). Affichage sur des télévisions connectées à des Raspberry"
                   "Pi, contrôlé via un dashboard."),
           Experience(
